@@ -1,28 +1,28 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a HTTP micro service to generate email for a given person name and domain.
 
-Things you may want to cover:
+Currently this service doesn't have authentication for http request but we can implement http basic authentication using username and password or token based authentication for real time projects.
 
-* Ruby version
+* Setup
+  First clone this application and 
+  
+  bundle install
+  
+  then start the server.
+  
+  HTTP request: http://localhost:3000/emails/get_email?domain=example.com&name=Reddy%20Mallu
+  
+<h5>What we can do Further</h5>
 
-* System dependencies
+I have used Rails because we can implement complete project in this as per requirements
 
-* Configuration
+For Example,
+Company wants to generate emails for their employees with respective to their company domain.
+For this we can define schema like this
+Company has many emaployees
+employee belongs to company
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Table
+Company - name, domain, email_format etc...(assuming company follows same email format for all employees )
+Employee - name, email, company_id, mobile etc...
